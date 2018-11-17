@@ -1,0 +1,27 @@
+.entry_TD{
+    background-color: rgb(211, 211, 211) !important;
+}
+
+.entry_IP{
+    background-color: rgb(129, 216, 206) !important;
+}
+
+.entry_DN{
+    background-color: rgb(128, 204, 128) !important;
+}
+
+.even {
+    opacity: 0.9 !important;
+}
+
+.odd {
+    opacity: 0.8 !important;
+}
+
+tr:hover {
+    opacity: 1.0 !important;
+}
+
+#create_header {
+    text-align: center;
+}

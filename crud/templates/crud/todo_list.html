@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo tracker Home</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'crud/style.css' %}">
+    <script type="text/javascript" src="{% static 'crud/datatables.js' %}"></script>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+
+        <table id="datatables_table" class="display">
+            <thead>
+            <tr>
+                <th></th>
+                <th>State</th>
+                <th>Due At</th>
+                <th>Text</th>
+                <th>Created At</th>
+                <th></th>
+            </tr>
+            <tr id="create_header">
+                <td></td>
+                <td>{{ form.state }}</td>
+                <td>{{ form.due_at }}</td>
+                <td>{{ form.text }}</td>
+                <td><input type="submit" value="Create"></td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for todo in todo_list %}
+                <tr class="entry_{{ todo.state }}">
+                    <td><a href="{% url "view:delete_todo" todo.id %}">Delete</a></td>
+                    <td>{{ todo.get_state_display }}</td>
+                    <td>{{ todo.due_at }}</td>
+                    <td>{{ todo.text }}</td>
+                    <td>{{ todo.created_at }}</td>
+                    <td><a href="{% url "view:edit_todo" todo.id %}">Update</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </form>
+
+</body>
+</html>
