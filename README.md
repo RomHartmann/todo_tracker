@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/RomHartmann/todo_tracker.svg?style=svg)](https://circleci.com/gh/RomHartmann/todo_tracker)
+
 Todo list tracker
 =================
 
