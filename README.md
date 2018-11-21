@@ -43,15 +43,15 @@ http://localhost:8000/view/
 **Docker service**
 ```bash
 # start service
-docker run -p 8001:8001 todo_tracker
+docker run -p 8007:8007 todo_tracker
 
 # run tests
-pipenv run python tests/api_tests.py --port=8001
+pipenv run python tests/api_tests.py --port=8007
 ```
 
 ### REST API
 
-`http://localhost:<port>/api/v1/todo/`  (Default `8000` for django, `8001` for docker)
+`http://localhost:<port>/api/v1/todo/`  (Default `8000` for django, `8007` for docker)
 
 REST api is built using Django's viewsets, so the basic CRUD functionality is pretty default:
 
@@ -79,7 +79,7 @@ REST api is built using Django's viewsets, so the basic CRUD functionality is pr
 I'd been meaning to re-familiarize myself with web development using Django for a while, and your little project
 seemed like such a good vehicle to do that.  So I've attached it in exchange for not just giving it to you sooner. :)
 
-You can find the little UI at  `http://localhost:<port>/view/`  (Default `8000` for django, `8001` for docker)
+You can find the little UI at  `http://localhost:<port>/view/`  (Default `8000` for django, `8007` for docker)
 
 Tied into the same db as the rest api. 
  
