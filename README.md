@@ -33,6 +33,11 @@ pipenv run python manage.py runserver
 pipenv run python tests/api_tests.py
 ```
 
+Then you can look at what the test script has created in the DB:
+http://localhost:8000/view/
+
+(I didn't clear the test DB on purpose, so that there is something to look at)
+
 **Docker service**
 ```bash
 # start service
@@ -41,11 +46,6 @@ docker run -p 8001:8001 todo_tracker
 # run tests
 pipenv run python tests/api_tests.py --port=8001
 ```
-
-Then you can look at what the test script has created in the DB:
-http://localhost:8001/view/
-
-(I didn't clear the test DB on purpose, so that there is something to look at)
 
 ### REST API
 
@@ -75,7 +75,7 @@ REST api is built using Django's viewsets, so the basic CRUD functionality is pr
 
 ### View
 I'd been meaning to re-familiarize myself with web development using Django for a while, and your little project
-seemd like such a good vehicle to do that.  So I've attached it in exchange for not just giving it to you sooner. :)
+seemed like such a good vehicle to do that.  So I've attached it in exchange for not just giving it to you sooner. :)
 
 You can find the little UI at  `http://localhost:<port>/view/`  (Default `8000` for django, `8001` for docker)
 
