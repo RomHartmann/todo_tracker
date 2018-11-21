@@ -10,15 +10,32 @@ Simple todo list tracker and manager.
 ```bash
 pipenv install
 pipenv run python manage.py migrate
-
-pipenv run python tests/api_tests.py
 ```
+
+This will start on `:8000` by default.
 
 ### Docker
 
 ```bash
 # install docker if needed
 docker build -t todo_tracker .
+```
+
+
+## Use
+
+**Local service**
+```bash
+# run service
+pipenv run python manage.py runserver
+
+# run tests
+pipenv run python tests/api_tests.py
+```
+
+**Docker service**
+```bash
+# start service
 docker run -p 8001:8001 todo_tracker
 
 # run tests
@@ -29,8 +46,6 @@ Then you can look at what the test script has created in the DB:
 http://localhost:8001/view/
 
 (I didn't clear the test DB on purpose, so that there is something to look at)
-
-## Use
 
 ### REST API
 
@@ -49,7 +64,7 @@ REST api is built using Django's viewsets, so the basic CRUD functionality is pr
 - `GET` to `/api/v1/todo/pk/`  to fetch single todo
 - `GET` to `/api/v1/todo/fetch_all`  to fetch all todo (custom action on viewset)
 - `GET` to `/api/v1/todo?state=IP`  to fetch paginated todo with state `in-progress`
-- `get` to `/api/v1/todo/fetch_by_due_at_range/2018-11-19T22:54:52.589846-08:00/2018-11-21T22:54:52.589934-08:00/` for todos that have `due_at` in a certain range.
+- `get` to `/api/v1/todo/fetch_by_due_at_range/2018-11-19T22:54:52.589846-08:00/2018-11-21T22:54:52.589934/` for todos that have `due_at` in a certain range.
 
 **Update**
 - `PATCH` to `/api/v1/todo/pk/` to update specific todo field, eg `{'state': 'DN'}`
