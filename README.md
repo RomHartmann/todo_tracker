@@ -83,3 +83,8 @@ Tied into the same db as the rest api.
  
 The pagination, sorting and search here happens client side though, so I wouldn't
 recommend shipping it to google quite yet (even though it looks so nice).
+
+
+## Other things in here I was playing around with 
+
+1. `.circleci/config.yml` configuration for free-tier CircleCi.
